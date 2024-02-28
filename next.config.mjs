@@ -8,6 +8,13 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  experimental: {
+      urlImports: ['https://cdn.plot.ly'],
+    },
+  images: {
+    domains: ["altcoinsbox.com"]
+  }
+};
 
 export default nextConfig;

@@ -1,0 +1,17 @@
+{
+    "name": "XycLoans verified Pools <> Asset List.",
+    "info": "This list showcases xycLoans pool contracts that have been verified by the community. Pools that are not verified will appear in our webapp as pools of unknown asset. This measure is to enforce a safe interaction between users and our webapp.",
+
+    "verified": [
+        {
+            "contract": "CARDOVHUIQVBDUKEYKCS4YDFFM7VSAHIMKCZ57NZKS6CT7RBEZNRKKL5",
+            "name":"XLM Pool 1",
+            "publisher": "xyclooLabs",
+            "asset": {
+                "code": "XLM",
+                "issuer": "native",
+                "logo": "https://altcoinsbox.com/wp-content/uploads/2023/01/xlm-stellar-lumens-logo.png"
+            }
+        }
+    ]
+}

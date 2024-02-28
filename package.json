@@ -12,9 +12,17 @@
     "deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
+    "@stellar/stellar-sdk": "^11.2.2",
+    "flowbite": "^2.3.0",
+    "flowbite-react": "^0.7.2",
     "next": "14.1.0",
+    "next-client-cookies": "^1.1.0",
+    "plotly.js": "^2.29.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-plotly.js": "^2.6.0",
+    "three": "^0.121.0",
+    "vanta": "^0.5.24"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.9.0",
@@ -22,7 +30,7 @@
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "vercel": "^33.5.2",
+    "vercel": "^32.3.0",
     "wrangler": "^3.29.0"
   }
 }
