@@ -13,7 +13,7 @@ export async function fetchPools() {
           },
         body: JSON.stringify({
           target: "fulld",
-          network: "api.mercurydata.app"
+          network: `${process.env.MERCURY_NETWORK}.mercurydata.app`
         })
       })
     
@@ -34,7 +34,7 @@ export async function fetchPools() {
           },
         body: JSON.stringify({
           target: "events",
-          network: "api.mercurydata.app"
+          network: `${process.env.MERCURY_NETWORK}.mercurydata.app`
         })
       })
   

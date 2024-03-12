@@ -3,28 +3,32 @@ import { xdr, TransactionBuilder, Networks, BASE_FEE, SorobanRpc } from '@stella
 export const publishTx = async (publicKey, contract_call) => {
 
     return new Promise(async (resolve, reject) => {
+        const server = new SorobanRpc.Server(
+            `${process.env.NEXT_PUBLIC_RPC_ENDPOINT}`,
 
+        )
         try {
             const server = new SorobanRpc.Server(
-                "https://soroban-testnet.stellar.org:443",
+                `${process.env.NEXT_PUBLIC_RPC_ENDPOINT}`,
             )
 
             const sourceAccount = await server.getAccount(publicKey)
 
             let builtTransaction = new TransactionBuilder(sourceAccount, {
                 fee: BASE_FEE,
-                networkPassphrase: Networks.TESTNET,
+                networkPassphrase: process.env.NEXT_PUBLIC_NETWORK,
             })
                 .addOperation(contract_call)
                 // This transaction will be valid for the next 30 seconds
                 .setTimeout(100)
                 .build();
 
+                console.log(builtTransaction)
             let preparedTransaction = await server.prepareTransaction(builtTransaction);
             console.log(preparedTransaction)
 
             const unsignedXdr = preparedTransaction.toXDR()
-            const simpleSignerUrl = 'https://sign-testnet.bigger.systems';
+            const simpleSignerUrl = process.env.NEXT_PUBLIC_SIGNER_URL;
 
             async function openSignWindow(xdr) {
                 const signWindow = window.open(
