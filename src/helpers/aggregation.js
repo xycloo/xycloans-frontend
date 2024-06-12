@@ -133,48 +133,45 @@ export function getTotAccountNormYield(yieldData, radix) {
 
 export const getAssetId = (contract) => {
     const object = List.verified.find(o => o.contract === contract);
+    const object_testnet = List.verified_testnet.find(o => o.contract === contract);
 
     if (object !== undefined) {
         return object.asset.code
+    }
+    else if (object_testnet !== undefined) {
+        return object_testnet.asset.code
     } else {
-        const fromStrkey = List.verified.find(o => o.contract === contract);
-        if (fromStrkey !== undefined) {
-            return fromStrkey.asset.code
-        } else {
             return "Unknown"
         }
-    }
 }
 
 
 export const getAssetLogo = (contract) => {
     const object = List.verified.find(o => o.contract === contract);
+    const object_testnet = List.verified_testnet.find(o => o.contract === contract);
     if (object !== undefined) {
        return object.asset.logo
+    } 
+    else if (object_testnet !== undefined) {
+        return object_testnet.asset.logo
     } else {
-        const fromStrkey = List.verified.find(o => o.contract === contract);
-        if (fromStrkey !== undefined) {
-            return fromStrkey.asset.logo
-        } else {
             return undefined
-        }
     }
   }
 
 
   export const getPoolName = (contract) => {
     const object = List.verified.find(o => o.contract === contract);
+    const object_testnet = List.verified_testnet.find(o => o.contract === contract);
 
     if (object !== undefined) {
         return object.name
+    }
+    else if (object_testnet !== undefined) {
+        return object_testnet.name
     } else {
-        const fromStrkey = List.verified.find(o => o.contract === contract);
-        if (fromStrkey !== undefined) {
-            return fromStrkey.name
-        } else {
             return "Unknown"
         }
-    }
     }
 
 

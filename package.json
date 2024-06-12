@@ -12,7 +12,7 @@
     "deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
-    "@stellar/stellar-sdk": "^11.2.2",
+    "@stellar/stellar-sdk": "^12.0.1",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.2",
     "next": "14.1.0",
